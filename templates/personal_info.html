@@ -1,0 +1,54 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class="profile">
+	<img src="{{ user_data.avatar_url }}" alt="your profile pic">
+</div>
+<div class="personal_info">
+  <div class="head_wrapper">
+    <div class="user_name">
+      <H2>{{ user_data.login }}</H2>
+    </div>
+    <div class="date_joined"> {{ user_data.created_at.split('T')[0] }}</div>
+    <div class="nickname">gitty</div>
+  </div>
+  <div class="bio">
+	  <p class="add-bio">{{ user_data.bio or 'No description specified' }}</p>
+  </div>
+
+  <div class="real_data">
+    <div class="repos">
+      <p class="identity">repos</p>
+      <span class="count">{{ user_data.public_repos}}</span>
+    </div>
+    <div class="followers">
+      <p class="text">followers</p>
+      <span class="count">{{ user_data.followers }}</span>
+    </div>
+    <div class="following">
+      <p class="text">following</p>
+      <span class="count">{{ user_data.following }}</span>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="icons">
+      <span class="material-symbols-outlined">
+        pin_drop
+      </span>
+      <p class="origin">{{ user_data.location }}</p>
+    </div>
+    <div class="icons">
+      <span class="material-symbols-outlined">
+        link
+      </span>
+      <p class="origin">{{ user_data.html_url }}</p>
+    </div>
+    <div class="icons">
+      <span class="material-symbols-outlined">
+        corporate_fare
+      </span>
+      <p class="origin">platform</p>
+    </div>
+  </div>
+</div>
+{% endblock %}
