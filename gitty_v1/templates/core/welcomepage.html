@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block static %}
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename="welcomepage.css")}}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+	{% with messages = get_flashed_messages(with_categories=true) %}
+	{% if messages %}
+	{% for categories, message in messages %}
+	<div class="alert-{{ categories }}" style="margin-bottom: 20px;">{{ message }}</div>
+	{% endfor %}
+	{% endif %}
+	{% endwith %}
+	<div class="header-date">May 13, 2024</div>
+	<h1>Hello,User!</h1>
+	<h2 class="text">Welcome to Gitty, where you dive deep into your GitHub account details and discover amazing
+		insights.
+	</h2>
+	<h2 class="new_text"></h2>
+	<div class="buttons">
+		<a href="#" class="button primary" style="justify-content: space-ve;">Explore Gitty
+			<svg width="0.625rem" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 9L9 1M9 1H2.5M9 1V7.22222" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+		</a>
+		{% if current_user.is_authenticated %}
+			<a href="{{ url_for('accountsbp.logout')}}" class="button secondary">Logout</a>
+		{% else %}
+			<a href="{{ url_for('accountsbp.logout')}}" class="button secondary">Explore more</a>
+		{% endif %}
+	</div>
+	{% endblock %}

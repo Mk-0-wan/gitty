@@ -1,0 +1,134 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Public Sans', sans-serif;
+	background-color: #000;
+	/* Dark background */
+	color: #fff;
+	/* White text */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	font-weight: 400;
+}
+
+.container {
+	text-align: center;
+	max-width: 800px;
+	padding: 10px;
+}
+
+.header-date {
+	font-size: 1em;
+	color: #fcf7f7;
+	/* Lighter color for the date */
+	margin-bottom: 10px;
+}
+
+h1 {
+	font-size: 5em;
+	font-weight: 500;
+	margin-bottom: 10px;
+}
+
+h2 {
+	font-size: 0.96em;
+	font-weight: 400;
+	margin-bottom: 40px;
+}
+
+.text {
+	display: none;
+}
+
+.buttons {
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+}
+
+.button {
+	text-decoration: none;
+	border-radius: 15%;
+	font-size: 1em;
+	font-weight: 100;
+	box-sizing: border-box;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	width: 165px;
+	height: 50px;
+
+	background: #FFFFFF;
+	border: 1px solid #000000;
+	border-radius: 30px;
+	transition: background-color 0.3s ease;
+}
+a .button {
+	transition: background-color 200ms ease-in-out;
+	background-color: var(--btn-primary-base);
+	color: var(--btn-primary-label);
+	border-radius: 9999px; /* Full rounding */
+	padding-left: var(--space-xs);
+	padding-right: var(--space-xs);
+	white-space: nowrap;
+	min-height: var(--min-h-button);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.3em;
+	font-size: var(--text-cta);
+}
+
+.button:hover {
+	background-color: var(--btn-primary-base--hover);
+}
+
+
+.primary {
+	background-color: #007bff;
+	/* Primary button color */
+	color: #fff;
+}
+
+.primary:hover {
+	background-color: #0056b3;
+	/* Darker shade for hover effect */
+}
+
+.secondary {
+	background-color: transparent;
+	border: 2px solid #007bff;
+	color: #007bff;
+}
+
+.secondary:hover {
+	background-color: #007bff;
+	color: #fff;
+}
+
+.alert-danger {
+	background-color: rgb(242, 220, 220);
+	height: auto;
+	max-width: 300px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	border-radius: 5px;
+	color: black;
+	border: solid 1px rgb(224, 169, 169)
+}
+
+
+.alert-success {
+	background-color: rgb(189, 238, 216);
+	height: auto;
+	max-width: 300px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	border-radius: 5px;
+	color: black;
+	border: solid 1px rgb(130, 185, 161)
+}

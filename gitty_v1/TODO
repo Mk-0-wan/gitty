@@ -1,0 +1,4 @@
+- You need to install mysql-server on your machine
+- You need to ensure that all the login is working fine
+- Flask login is used perfectly
+- How to intergrate decouple on your project.

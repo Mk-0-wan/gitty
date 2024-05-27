@@ -1,0 +1,196 @@
+:root {
+	--btn-primary-base: #007bff; /* Example color */
+	--btn-primary-label: #ffffff; /* Example color */
+	--btn-primary-base--hover: #0056b3; /* Example color */
+	--btn-secondary-label: #cccccc; /* Example color */
+	--btn-link-underline--hover: #ffffff; /* Example color */
+	--head-font-size: 4.5em;
+	--subhead-font-size: 1.5em;
+	--thin-font-weight: 90;
+	--padding-between-elements: 10px;
+	--padding-between-childelements: 15px;
+	--global-font-weight: 400;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto', sans-serif;
+	color: #fff;
+	display: flex;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	background-color: #0e0e0e; /* Dark background for initial load */
+	transition: background-color 0.3s;
+}
+
+
+.grid {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	perspective: 1000px;
+	perspective-origin: center bottom;
+}
+
+.grid-lines {
+	width: 100%;
+	height: 100%;
+	background-image: linear-gradient(to right, rgba(243, 249, 243, 0.1) 1px, transparent 0.3px),
+	linear-gradient(to bottom, rgba(244, 252, 244, 0.1) 1px, transparent 0.3px);
+	background-size: 80px 80px;
+	transition: background-position 0.1s ease-out;
+}
+.content {
+	position: relative;
+	z-index: 10000;
+	color: white; /* Make text visible on dark background */
+	text-align: center;
+}
+
+.light-mode .grid-lines {
+	background-image: linear-gradient(to right, rgba(0, 0, 0, 0.1) 1px, transparent 0.3px),
+	linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 1px, transparent 0.3px);
+}
+
+.light-mode .content {
+	color: black;
+}
+
+.toggle-button {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	z-index: 2;
+	padding: 10px 20px;
+	background-color: rgba(255, 255, 255, 0.5);
+	border: none;
+	cursor: pointer;
+	font-size: 16px;
+	border-radius: 5px;
+	transition: background-color 0.3s;
+}
+
+.dark-mode .toggle-button {
+	background-color: rgba(0, 0, 0, 0.5);
+	color: white;
+}
+
+.containerx {
+	max-width: 1200px;
+	margin-bottom: 2rem; /* Equivalent to mb-xl */
+	text-align: center;
+}
+
+.contentx {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	gap: 1.25rem; /* Equivalent to mt-2xl */
+}
+
+.date {
+	font-size: 1.1rem;
+	line-height: 150%;
+	letter-spacing: .0016em;
+	font-weight: 500;
+}
+
+h1 {
+	font-size: var(--head-font-size); /* Equivalent to text-h1 */
+	font-weight: var(--global-font-weight);
+	line-height: 1.2;
+	margin: 0;
+}
+
+.description {
+	margin-top: 1rem; /* Equivalent to mt-xs */
+}
+
+.description p {
+	font-size: var(--subhead-font-size); /* Equivalent to text-subhead */
+	line-height: 1.5;
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+.actions {
+	display: flex;
+	margin-top: 1.5rem; /* Equivalent to mt-s */
+	min-height: 3rem; /* Equivalent to min-h-s */
+	justify-content: center;
+	gap: 1.5rem;
+}
+
+.primary-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.3em;
+	background-color: var(--btn-primary-base);
+	color: var(--btn-primary-label);
+	border-radius: 9999px; /* Equivalent to rounded-full */
+	padding-left: 1.5rem; /* Equivalent to px-xs */
+	padding-right: 1.5rem; /* Equivalent to px-xs */
+	text-decoration: none;
+	white-space: nowrap;
+	min-height: 2.5rem; /* Equivalent to min-h-button */
+	font-size: 1rem; /* Equivalent to text-cta */
+	transition: background-color 200ms ease-in-out;
+}
+
+.primary-btn:hover {
+	background-color: var(--btn-primary-base--hover);
+}
+
+.secondary-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.3em;
+	color: var(--btn-secondary-label);
+	/* border-bottom: 2px solid transparent */
+	position: relative;
+	padding: 0.5rem 0; /* Equivalent to py-5xs */
+	font-size: 1rem; /* Equivalent to text-cta */
+	/* transition: border-color 200ms ease-in-out; */
+}
+
+.secondary-btn:hover .underline {
+	opacity: 1;
+}
+
+.secondary-btn:focus-visible {
+	border-color: transparent;
+	border-radius: 0.5rem; /* Equivalent to rounded-s */
+	outline: none;
+}
+
+.underline {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	height: 0.1px;
+	width: 100%;
+	margin-bottom: 1px;
+	background-color: var(--btn-link-underline--hover);
+	opacity: 0;
+	transition: opacity 200ms ease-in-out;
+}
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}

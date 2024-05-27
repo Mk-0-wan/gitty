@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block static %}
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename="styles.css")}}">
+{% endblock %}
+
+{% block content %}
+<div class="grid">
+	<div class="grid-lines"></div>
+</div>
+<div class="containerx">
+	<div class="contentx">
+		<div class="date">May 13, 2024</div>
+		<h1 class="header" data-text-content="Welcome to Gitty Your  Favourite GitHub Tracer"></h1>
+		<div class="description">
+			<p >Welcome to Gitty! Unlock detailed insights into your GitHub with charts on commits, stars, issues, and more. See your code like never before. Start now!</p>
+		</div>
+		<div class="actions">
+			<a href="https://chatgpt.com/" class="primary-btn" target="_blank" rel="noreferrer">
+				Try Gitty
+				<svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M1 9L9 1M9 1H2.5M9 1V7.22222" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"></path>
+				</svg>
+				<span class="sr-only">(opens in a new window)</span>
+			</a>
+			<a href="/index/spring-update/" class="secondary-btn">
+				View Gitty in Action
+				<svg xmlns="http://www.w3.org/2000/svg" style="transform:rotate(-90deg)" width="14" height="8" viewBox="0 0 14 8" fill="none">
+					<path fill-rule="evenodd" clip-rule="evenodd" d="M0.292892 0.292894C0.683416 -0.0976306 1.31658 -0.0976315 1.70711 0.292892L7.00002 5.58579L12.2929 0.292894C12.6834 -0.0976306 13.3166 -0.0976315 13.7071 0.292892C14.0976 0.683416 14.0976 1.31658 13.7071 1.70711L7.70713 7.70711C7.51959 7.89464 7.26524 8 7.00002 8C6.7348 8 6.48045 7.89464 6.29291 7.70711L0.292894 1.70711C-0.0976306 1.31658 -0.0976315 0.683419 0.292892 0.292894Z" fill="currentColor"></path>
+				</svg>
+				<div class="underline"></div>
+			</a>
+		</div>
+	</div>
+</div>
+<button class="toggle-button" onclick="toggleMode()">Light Mode</button>
+{% endblock %}
