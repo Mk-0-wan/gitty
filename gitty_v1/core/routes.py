@@ -27,6 +27,6 @@ def intro_page():
 def welcome():
     """The new homepage once the user logs in"""
     try:
-        return render_template("/core/welcomepage.html", title="Welcompage")
+        return render_template("/ui/ui.html", title="UI")
     except TemplateNotFound:
         abort(404)

@@ -1,4 +1,4 @@
-- You need to install mysql-server on your machine
-- You need to ensure that all the login is working fine
-- Flask login is used perfectly
-- How to intergrate decouple on your project.
+Make all the connection between the database and the app.
+Ensure that all the login page is working fine
+Clean use the code with new ways of handling navigation.
+Handle the front-end stuff for holding all the funciton with api calls.

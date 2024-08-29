@@ -1,0 +1,188 @@
+{% extends 'base.html' %}
+
+{% block static %}
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename="ui.css")}}">
+{% endblock %}
+
+{% block content %}
+ <div class="container">
+        
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fab fa-github"></i> Gitty
+            </div>
+            <nav class="nav-links">
+                <a href="#" class="nav-link active"><i class="fas fa-home"></i> Home</a>
+                <a href="#" class="nav-link"><i class="fas fa-project-diagram"></i> Projects</a>
+                <a href="#" class="nav-link"><i class="fas fa-tasks"></i> Tasks</a>
+                <a href="#" class="nav-link"><i class="fas fa-users"></i> Team</a>
+                <a href="#" class="nav-link"><i class="fas fa-cog"></i> Settings</a>
+            </nav>
+            <div class="get-pro">
+                <h3>Upgrade to Pro</h3>
+                <p>Get more features and benefits</p>
+                <button class="upgrade-btn">Upgrade Now</button>
+            </div>
+            <div class="sidebar-footer">
+                <a href="#" class="nav-link"><i class="fas fa-question-circle"></i> Help</a>
+                </a>
+                {% if current_user.is_authenticated %}
+                  <a href="{{ url_for('accountsbp.logout')}}" class="button secondary">Logout</a>
+                {% endif %}
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            
+            <!-- Top Navbar -->
+            <header class="top-navbar">
+                <div class="user-info">
+                    <img src="./images/pic4.jpg" alt="User Image" class="user-image">
+                    <div class="user-details">
+                        <span class="user-name">Margaret Fletcher</span>
+                        <span class="user-role">Project Manager</span>
+                    </div>
+                    <span class="date"><i class="far fa-calendar-alt"></i> 27 Feb</span>
+                </div>
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search...">
+                </div>
+                <div class="notifications">
+                    <button class="notification-btn"><i class="fas fa-bell"></i></button>
+                </div>
+            </header>
+
+            <!-- Central Chat/Content Section -->
+            <section class="content-section">
+                <div class="sec-con">
+                    <div class="stat-grid">
+                        <div class="stat-card commits">
+                            <i class="fas fa-code-branch"></i>
+                            <h3>Commits</h3>
+                            <p class="stat-number">1,234</p>
+                            <p class="stat-change positive">+5.3%</p>
+                            <div class="graph-container">
+                                <svg class="graph" viewBox="0 0 100 20">
+                                    <polyline points="0,10 20,5 40,15 60,7 80,12 100,2" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="stat-card pull-requests">
+                            <i class="fas fa-code-pull-request"></i>
+                            <h3>Pull Requests</h3>
+                            <p class="stat-number">56</p>
+                            <p class="stat-change negative">-2.8%</p>
+                            <div class="graph-container">
+                                <svg class="graph" viewBox="0 0 100 20">
+                                    <polyline points="0,2 20,10 40,5 60,15 80,8 100,18" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="stat-card issues">
+                            <i class="fas fa-exclamation-circle"></i>
+                            <h3>Issues</h3>
+                            <p class="stat-number">89</p>
+                            <p class="stat-change positive">+12.7%</p>
+                            <div class="graph-container">
+                                <svg class="graph" viewBox="0 0 100 20">
+                                    <polyline points="0,15 20,10 40,12 60,5 80,8 100,2" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="stat-card contributions">
+                            <i class="fas fa-users"></i>
+                            <h3>Contributions</h3>
+                            <p class="stat-number">4,321</p>
+                            <p class="stat-change positive">+8.1%</p>
+                            <div class="graph-container">
+                                <svg class="graph" viewBox="0 0 100 20">
+                                    <polyline points="0,10 20,8 40,12 60,6 80,10 100,4" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="followers-table-container">
+                        <h2>Top Followers</h2>
+                        <table class="followers-table">
+                            <thead>
+                                <tr>
+                                    <th>User</th>
+                                    <th>Commits</th>
+                                    <th>Most Used Language</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="user-info">
+                                            <img src="https://i.pravatar.cc/40?img=1" alt="User 1">
+                                            <span>Alice Johnson</span>
+                                        </div>
+                                    </td>
+                                    <td>1,234</td>
+                                    <td>
+                                        <span class="language-tag javascript">JavaScript</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="user-info">
+                                            <img src="https://i.pravatar.cc/40?img=2" alt="User 2">
+                                            <span>Bob Smith</span>
+                                        </div>
+                                    </td>
+                                    <td>987</td>
+                                    <td>
+                                        <span class="language-tag python">Python</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="user-info">
+                                            <img src="https://i.pravatar.cc/40?img=3" alt="User 3">
+                                            <span>Carol Davis</span>
+                                        </div>
+                                    </td>
+                                    <td>2,345</td>
+                                    <td>
+                                        <span class="language-tag java">Java</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="user-info">
+                                            <img src="https://i.pravatar.cc/40?img=4" alt="User 4">
+                                            <span>David Wilson</span>
+                                        </div>
+                                    </td>
+                                    <td>876</td>
+                                    <td>
+                                        <span class="language-tag cpp">C++</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="user-info">
+                                            <img src="https://i.pravatar.cc/40?img=5" alt="User 5">
+                                            <span>Eva Brown</span>
+                                        </div>
+                                    </td>
+                                    <td>3,210</td>
+                                    <td>
+                                        <span class="language-tag typescript">TypeScript</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Right Sidebar -->
+    </div>
+{% endblock %}

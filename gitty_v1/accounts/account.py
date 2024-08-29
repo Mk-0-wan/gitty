@@ -33,33 +33,3 @@ class Accounts(BaseModel, Base, UserMixin):
             bytes = __value.encode("utf-8")
             __value = bcrypt.hashpw(bytes, __salt).decode("utf-8")
         return super().__setattr__(__name, __value)
-
-"""
-ac = Accounts()
-users = {
-        "username" : "bob",
-        "email": "bob@gmail.com",
-        "password": "spaceandtime",
-        "session_id": "e4432ddg3"
-        }
-ac.save()
-print("---==###################==---")
-print(ac)
-print(ac.id)
-print(ac.__class__.__name__)
-print("---==###################==---")
-print()
-prin()
-print()
-fs = models.storage
-print("---====---")
-print("Each instance saved in the file")
-print(fs.all())
-print()
-print()
-print(fs.get(ac, ac.id))
-print()
-print()
-print(fs.count())
-print("---====---")
-"""
