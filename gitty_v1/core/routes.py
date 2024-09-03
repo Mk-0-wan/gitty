@@ -30,3 +30,27 @@ def welcome():
         return render_template("/ui/ui.html", title="UI")
     except TemplateNotFound:
         abort(404)
+
+@corebp.route("/projects")
+def projects():
+    """Handling repo creation and deletion"""
+    try:
+        return render_template("/ui/projects.html", title="Repos")
+    except TemplateNotFound:
+        abort(404)
+
+@corebp.route("/teams")
+def teams():
+    """Handling repo creation and deletion"""
+    try:
+        return render_template("/ui/teams.html", title="Contributions")
+    except TemplateNotFound:
+        abort(404)
+
+@corebp.route("/settings")
+def settings():
+    """Handling repo creation and deletion"""
+    try:
+        return render_template("/ui/settings.html", title="Settings")
+    except TemplateNotFound:
+        abort(404)

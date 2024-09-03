@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block static %}
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename="ui.css")}}">
+{% endblock %}
+
+
+{% block content %}
+   <div class="mobile-menu-toggle">
+        <i class="fas fa-bars"></i>
+    </div>
+    <div class="container">
+        <!-- Sidebar (same as in card.html) -->
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fab fa-github"></i> Gitty
+            </div>
+            <nav class="nav-links">
+                <a href="{{ url_for('corebp.welcome')}}" class="nav-link active"><i class="fas fa-home"></i> Home</a>
+                <a href="{{ url_for('corebp.projects')}}" class="nav-link"><i class="fas fa-project-diagram"></i> Projects</a>
+                <a href="{{ url_for('corebp.teams')}}" class="nav-link"><i class="fas fa-users"></i> Team</a>
+                <a href="{{ url_for('corebp.settings')}}" class="nav-link"><i class="fas fa-cog"></i> Settings</a>
+            </nav>
+            <div class="get-pro">
+                <h3>Upgrade to Pro</h3>
+                <p>Get more features and benefits</p>
+                <button class="upgrade-btn">Upgrade Now</button>
+            </div>
+            <div class="sidebar-footer">
+                <a href="#" class="nav-link"><i class="fas fa-question-circle"></i> Help</a>
+                <a href="{{ url_for('accountsbp.logout')}}" class="nav-link"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <!-- Top Navbar -->
+            <header class="top-navbar">
+                <h1>My Projects</h1>
+            </header>
+            <!-- Projects Section -->
+            <section class="content-section">
+                <div class="projects-controls">
+                    <input type="text" id="new-repo-name" placeholder="New repository name">
+                    <button id="create-repo-btn">Create New Repository</button>
+                </div>
+                <div class="projects-list" id="projects-list">
+                    <!-- Projects will be dynamically inserted here -->
+                </div>
+            </section>
+        </div>
+    </div>
+{% endblock %}

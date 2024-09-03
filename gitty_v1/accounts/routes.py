@@ -28,7 +28,7 @@ def registration():
                 )
         acc.save()
 
-        login_user(acc)
+        #login_user(acc)
         flash(f"Account created for {form.username.data}", 'success')
         return redirect(url_for('accountsbp.login'))
     return render_template("accounts/signup.html", title="signup", form=form)
@@ -47,7 +47,7 @@ def login():
         auth = storage.acc_authentication(form.email.data, form.password.data)
         if auth:
             login_user(auth)
-            flash(f"Welcome back {form.email.data}!", 'success')
+            # flash(f"Welcome back {form.email.data}!", 'success')
             return redirect(url_for('corebp.welcome'))
         else:
             flash(f"t(0 - 0)t, see you later attacker", 'danger')
@@ -59,4 +59,4 @@ def logout():
     """Logs out the current active accounts"""
     logout_user()
     flash("You are logged out", "success")
-    return redirect(url_for('accountsbp.login'))
+    return redirect(url_for('corebp.intro_page'))
