@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block static %}
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename="accounts.css")}}">
+{% endblock %}
+
+{% block msg %}
+	{% with messages = get_flashed_messages(with_categories=true) %}
+		{% if messages %}
+			{% for categories, message in messages %}
+				<div class="alerts alert-{{ categories }}" style="margin-bottom: 20px;">{{ message }}</div>
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+	<form method="POST" action="">
+		{{ form.hidden_tag() }}
+		<legend>Gitty Login</legend>
+		<div class="name-box">
+			{{ form.email(class="input-text", placeholder="Email")}}
+			<!--<input type="text" placeholder="username" required class="input-text">-->
+			<i class='bx bxs-user'></i>
+		</div>
+		<div class="name-box">
+			{{ form.password(class="input-text", placeholder="Password")}}
+			<!--<input type="password" id="input-field" placeholder="password" required class="input-text">-->
+			<i class='bx bxs-lock-alt'></i>
+		</div>
+		<div class="remember">
+			<label for="checkbox">
+				<input type="checkbox">
+				Remember me
+			</label>
+			<a href="#" class="link">Forgot password</a>
+		</div>
+		{{ form.submit(class="btn") }}
+		<!--<button type="submit" class="btn">Gitty_login</button>-->
+		<div class="create-account">
+			<p>Don't have an account? <a href="{{ url_for('accountsbp.registration') }}" class="register-link">Create one for free</a></p>
+		</div>
+	</form>
+</div>
+{% endblock %}

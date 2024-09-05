@@ -1,0 +1,39 @@
+drwxr-xr-x    - archmk  4 Sep 03:11 .
+.rw-r--r--  871 archmk  4 Sep 03:11 ├── __init__.py
+.rw-r--r--  216 archmk 18 May 18:40 ├── __main__.py
+.rw-r--r--    0 archmk  4 Sep 04:15 ├── _file_structure.txt
+drwxr-xr-x    - archmk  4 Sep 03:54 ├── accounts
+.rw-r--r--    1 archmk 17 May 13:16 │  ├── __init__.py
+drwxr-xr-x    - archmk  4 Sep 03:54 │  ├── __pycache__
+.rw-r--r--  802 archmk  4 Sep 03:42 │  ├── account.py
+.rw-r--r-- 1.8k archmk  4 Sep 02:58 │  ├── forms.py
+.rw-r--r-- 2.2k archmk  4 Sep 03:54 │  └── routes.py
+drwxr-xr-x    - archmk  4 Sep 03:39 ├── core
+.rw-r--r--    0 archmk 18 May 18:43 │  ├── __init__.py
+drwxr-xr-x    - archmk  4 Sep 03:39 │  ├── __pycache__
+.rw-r--r--  533 archmk  4 Sep 03:39 │  └── routes.py
+.rw-r--r--  322 archmk 21 Aug 05:02 ├── extensions.py
+.rw-r--r--  286 archmk 15 Jul 16:00 ├── gitty_mysql_dev.sql
+drwxr-xr-x    - archmk 22 Aug 22:38 ├── models
+.rw-r--r--  754 archmk 21 Aug 04:46 │  ├── __init__.py
+.rw-r--r-- 3.2k archmk 22 Aug 22:38 │  ├── basemodel.py
+drwxr-xr-x    - archmk  4 Sep 03:05 │  └── engine
+.rw-r--r--  351 archmk 23 May 10:16 ├── requirements.txt
+drwxr-xr-x    - archmk  3 Sep 17:04 ├── static
+.rw-r--r-- 2.9k archmk  3 Sep 17:04 │  ├── accounts.css
+.rw-r--r--  111 archmk 25 May 13:01 │  ├── base.css
+drwxr-xr-x    - archmk  3 Sep 15:19 │  ├── scripts
+.rw-r--r-- 2.0k archmk  3 Sep 12:23 │  ├── settings.css
+.rw-r--r-- 6.2k archmk  3 Sep 15:46 │  ├── styles.css
+.rw-r--r--  12k archmk  3 Sep 12:22 │  ├── ui.css
+.rw-r--r-- 2.2k archmk 25 May 12:55 │  └── welcomepage.css
+drwxr-xr-x    - archmk  3 Sep 14:04 ├── templates
+drwxr-xr-x    - archmk 30 Aug 01:21 │  ├── accounts
+.rw-r--r-- 2.2k archmk  3 Sep 14:04 │  ├── base.html
+drwxr-xr-x    - archmk  4 Sep 03:30 │  ├── core
+drwxr-xr-x    - archmk  4 Sep 04:02 │  └── ui
+.rw-r--r--  234 archmk 21 Aug 04:52 ├── TODO
+drwxr-xr-x    - archmk  4 Sep 04:14 └── ui
+.rw-r--r--    0 archmk 18 May 19:58    ├── __init__.py
+.rw-r--r--  497 archmk  4 Sep 04:14    ├── gitty.py
+.rw-r--r-- 1.2k archmk  4 Sep 03:39    └── routes.py
