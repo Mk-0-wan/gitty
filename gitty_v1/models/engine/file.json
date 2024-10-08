@@ -1,0 +1,56 @@
+{
+    "Accounts.3c9deba7-68c9-4f82-8895-85b5e53466f0": {
+        "username": "Mk-0-wan",
+        "password": "$2b$12$xOP.1QHiQA6YR2CN7z8WT.ShNzUa1OBtyPDNjhxktaOYGxWEh1pde",
+        "email": "victormurithi2020@gmail.com",
+        "session_id": "dlfjalfjdaeialre",
+        "updated_at": "2024-05-22T00:53:41.338953",
+        "id": "3c9deba7-68c9-4f82-8895-85b5e53466f0",
+        "__class__": "Accounts"
+    },
+    "Accounts.f3e9fbfe-9b6d-4a97-900c-ad22b30e7fdd": {
+        "username": "popy",
+        "password": "$2b$12$8ebEWu.ND6h/0FA4kazq3ORKQtGdrBE85EgBer9PIA9aniLimYX3m",
+        "email": "test@gmail.com",
+        "session_id": "dlfjalfjdaeialre",
+        "updated_at": "2024-05-22T08:15:30.031608",
+        "id": "f3e9fbfe-9b6d-4a97-900c-ad22b30e7fdd",
+        "__class__": "Accounts"
+    },
+    "Accounts.8ec62bde-adc1-44a8-a700-83a776ca9c09": {
+        "username": "popy",
+        "password": "$2b$12$NSTti5LyxCWhoqPDOXxvYeCp/pwpCQW4d3N5NKkWAiqEubCwF49Pe",
+        "email": "test@gmail.com",
+        "session_id": "dlfjalfjdaeialre",
+        "updated_at": "2024-05-22T08:23:01.307582",
+        "id": "8ec62bde-adc1-44a8-a700-83a776ca9c09",
+        "__class__": "Accounts"
+    },
+    "Accounts.b456f7e5-2d7a-4976-b0a8-e3b1e026857c": {
+        "username": "mpx",
+        "password": "$2b$12$pM3hjJiHQsR3c4TFnRV9m.x2n3iexNvl5Kan3WNoGAJHso.T8zcAK",
+        "email": "mpx@gmail.com",
+        "session_id": "dlfjalfjdaeialre",
+        "updated_at": "2024-05-22T08:37:27.720643",
+        "id": "b456f7e5-2d7a-4976-b0a8-e3b1e026857c",
+        "__class__": "Accounts"
+    },
+    "Accounts.7ad24f2e-bd34-4635-bb16-4bb6d5b772e1": {
+        "username": "sam",
+        "password": "$2b$12$A2lbEUwspSPLHGCgoKW4KOPi2nxfvNbpy2FcAOgsPtMKVsatmovKG",
+        "email": "sam@gmail.com",
+        "session_id": "dlfjalfjdaeialre",
+        "updated_at": "2024-05-22T08:40:40.187965",
+        "id": "7ad24f2e-bd34-4635-bb16-4bb6d5b772e1",
+        "__class__": "Accounts"
+    },
+    "Accounts.04e6b42e-5080-4c9a-bc9d-a6ebc33efc44": {
+        "username": "bobby",
+        "password": "$2b$12$ihV5xpUt5Kmd7k3euQCPa.Kdh/fCpKZgnGte7PowQKtCXuYsAba0G",
+        "email": "bobby@gmail.com",
+        "session_id": "dlfjalfjdaeialre",
+        "updated_at": "2024-05-22T08:41:37.903879",
+        "id": "04e6b42e-5080-4c9a-bc9d-a6ebc33efc44",
+        "__class__": "Accounts"
+    }
+}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block static %}
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename="settings.css")}}">
+{% endblock %}
+
+
+{% block content %}
+   <div class="container">
+     <a href="{{ url_for('corebp.welcome')}}" class="back-button">←</a>
+        <h1>Settings</h1>
+        <div class="setting-option">
+            <label for="theme-toggle"><span class="mode">Dark</span> Mode</label>
+            <label class="switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider round"></span>
+            </label>
+        </div>
+    </div>
+{% endblock %}
+

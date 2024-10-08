@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block static %}
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename="ui.css")}}">
+{% endblock %}
+
+
+{% block content %}
+  <div class="mobile-menu-toggle">
+        <i class="fas fa-bars"></i>
+    </div>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fab fa-github"></i> Gitty
+            </div>
+            <nav class="nav-links">
+                <a href="{{ url_for('uibp.welcome')}}" class="nav-link active"><i class="fas fa-home"></i> Home</a>
+                <a href="{{ url_for('uibp.projects')}}" class="nav-link"><i class="fas fa-project-diagram"></i> Projects</a>
+                <a href="{{ url_for('uibp.teams')}}" class="nav-link"><i class="fas fa-users"></i> Team</a>
+                <a href="{{ url_for('uibp.settings')}}" class="nav-link"><i class="fas fa-cog"></i> Settings</a>
+            </nav>
+            <div class="get-pro">
+                <h3>Upgrade to Pro</h3>
+                <p>Get more features and benefits</p>
+                <button class="upgrade-btn">Upgrade Now</button>
+            </div>
+            <div class="sidebar-footer">
+                <a href="#" class="nav-link"><i class="fas fa-question-circle"></i> Help</a>
+                <a href="{{ url_for('accountsbp.logout')}}" class="nav-link"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <!-- Top Navbar -->
+            <header class="top-navbar">
+              <a href="{{ url_for('uibp.welcome')}}" class="back-button"><i class="fas fa-arrow-left"></i> Back to Home</a>
+                <h1>My Contributed Repositories</h1>
+            </header>
+            <!-- Teams Section -->
+            <section class="content-section">
+                <div id="repo-list" class="repo-list">
+                    <!-- Repositories will be dynamically inserted here -->
+                </div>
+            </section>
+        </div>
+    </div>
+{% endblock %}
