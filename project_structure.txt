@@ -1,0 +1,40 @@
+ .
+├──  eslint.config.js
+├──  index.html
+├──  package-lock.json
+├──  package.json
+├──  postcss.config.js
+├──  project_structure.txt
+├──  public
+│  ├── 󰕙 vite.svg
+│  └──  webfonts
+│     ├──  Geist-Black.woff2
+│     ├──  Geist-Black.woff2:Zone.Identifier
+│     ├──  Geist-Bold.woff2
+│     ├──  Geist-Bold.woff2:Zone.Identifier
+│     ├──  Geist-ExtraBold.woff2
+│     ├──  Geist-ExtraBold.woff2:Zone.Identifier
+│     ├──  Geist-ExtraLight.woff2
+│     ├──  Geist-ExtraLight.woff2:Zone.Identifier
+│     ├──  Geist-Light.woff2
+│     ├──  Geist-Light.woff2:Zone.Identifier
+│     ├──  Geist-Medium.woff2
+│     ├──  Geist-Medium.woff2:Zone.Identifier
+│     ├──  Geist-Regular.woff2
+│     ├──  Geist-Regular.woff2:Zone.Identifier
+│     ├──  Geist-SemiBold.woff2
+│     ├──  Geist-SemiBold.woff2:Zone.Identifier
+│     ├──  Geist-Thin.woff2
+│     ├──  Geist-Thin.woff2:Zone.Identifier
+│     ├──  Geist[wght].woff2
+│     └──  Geist[wght].woff2:Zone.Identifier
+├──  README.md
+├──  src
+│  ├──  App.css
+│  ├──  App.jsx
+│  ├──  assets
+│  │  └── 󰕙 react.svg
+│  ├──  index.css
+│  └──  main.jsx
+├──  tailwind.config.js
+└──  vite.config.js
