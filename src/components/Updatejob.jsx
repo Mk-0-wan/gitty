@@ -1,44 +1,50 @@
-import { defaultFormData } from "../utils/formObject";
-import { useState } from "react";
 import { PropTypes } from "prop-types";
-import { useNavigate } from "react-router-dom";
+import { useParams, useLoaderData, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { useState } from "react";
 
-export default function Addjobs({ addJobsSubmit }) {
-  const [formdata, setFormData] = useState(defaultFormData);
+export default function Updatejob({ updatedJobs }) {
   const navigate = useNavigate();
+  const { id } = useParams();
+  const updatedjobdata = useLoaderData(id);
+  const [updatedFormData, setUpdatedFormData] = useState(updatedjobdata);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formdata,
-      [name]: value,
-    });
+    if (name.startsWith("company_")) {
+      const companyField = name.split("_")[1];
+      setUpdatedFormData({
+        ...updatedFormData,
+        company: {
+          ...updatedFormData.company,
+          [companyField]: value,
+        },
+      });
+    } else {
+      setUpdatedFormData({
+        ...updatedFormData,
+        [name]: value,
+      });
+    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // console.log(formdata);
-    const newdata = {
-      id: crypto.randomUUID(),
-      title: formdata.title,
-      type: formdata.type,
-      description: formdata.description,
-      location: formdata.location,
-      salary: formdata.salary,
+    const updatedForm = {
+      ...updatedFormData,
       company: {
-        name: formdata.company_name,
-        description: formdata.company_description,
-        contactEmail: formdata.contact_email,
-        contactPhone: formdata.contact_phone,
+        name: updatedFormData.company.name,
+        description: updatedFormData.company.description,
+        contactEmail: updatedFormData.company.contactEmail,
+        contactPhone: updatedFormData.company.contactPhone,
       },
     };
 
-    // console.log(newdata);
-    addJobsSubmit(newdata);
-    toast.success("Job added successfully");
+    updatedJobs(updatedForm);
+    toast.success("Job updated successfully");
     navigate("/jobs");
   };
+
   return (
     <>
       <section className="bg-indigo-50">
@@ -46,7 +52,7 @@ export default function Addjobs({ addJobsSubmit }) {
           <div className="bg-white px-6 py-8 mb-4 shadow-md rounded-md border m-4 md:m-0">
             <form onSubmit={handleSubmit}>
               <h2 className="text-3xl text-center font-semibold mb-6">
-                Add Job
+                Update Job
               </h2>
 
               <div className="mb-4">
@@ -61,7 +67,7 @@ export default function Addjobs({ addJobsSubmit }) {
                   name="type"
                   className="border rounded w-full py-2 px-3"
                   required
-                  value={formdata.type}
+                  value={updatedFormData.type}
                   onChange={handleChange}
                 >
                   <option value="Full-Time">Full-Time</option>
@@ -82,7 +88,7 @@ export default function Addjobs({ addJobsSubmit }) {
                   className="border rounded w-full py-2 px-3 mb-2"
                   placeholder="eg. Beautiful Apartment In Miami"
                   required
-                  value={formdata.title}
+                  value={updatedFormData.title}
                   onChange={handleChange}
                 />
               </div>
@@ -99,7 +105,7 @@ export default function Addjobs({ addJobsSubmit }) {
                   className="border rounded w-full py-2 px-3"
                   rows="4"
                   placeholder="Add any job duties, expectations, requirements, etc"
-                  value={formdata.description}
+                  value={updatedFormData.description}
                   onChange={handleChange}
                 ></textarea>
               </div>
@@ -116,7 +122,7 @@ export default function Addjobs({ addJobsSubmit }) {
                   name="salary"
                   className="border rounded w-full py-2 px-3"
                   required
-                  value={formdata.salary}
+                  value={updatedFormData.salary}
                   onChange={handleChange}
                 >
                   <option value="Under $50K">Under $50K</option>
@@ -144,7 +150,7 @@ export default function Addjobs({ addJobsSubmit }) {
                   className="border rounded w-full py-2 px-3 mb-2"
                   placeholder="Company Location"
                   required
-                  value={formdata.location}
+                  value={updatedFormData.location}
                   onChange={handleChange}
                 />
               </div>
@@ -164,7 +170,7 @@ export default function Addjobs({ addJobsSubmit }) {
                   name="company_name"
                   className="border rounded w-full py-2 px-3"
                   placeholder="Company Name"
-                  value={formdata.company_name}
+                  value={updatedFormData.company.name}
                   onChange={handleChange}
                 />
               </div>
@@ -182,7 +188,7 @@ export default function Addjobs({ addJobsSubmit }) {
                   className="border rounded w-full py-2 px-3"
                   rows="4"
                   placeholder="What does your company do?"
-                  value={formdata.company_description}
+                  value={updatedFormData.company.description}
                   onChange={handleChange}
                 ></textarea>
               </div>
@@ -197,11 +203,11 @@ export default function Addjobs({ addJobsSubmit }) {
                 <input
                   type="email"
                   id="contact_email"
-                  name="contact_email"
+                  name="company_contactEmail"
                   className="border rounded w-full py-2 px-3"
                   placeholder="Email address for applicants"
                   required
-                  value={formdata.contact_email}
+                  value={updatedFormData.company.contactEmail}
                   onChange={handleChange}
                 />
               </div>
@@ -215,10 +221,10 @@ export default function Addjobs({ addJobsSubmit }) {
                 <input
                   type="tel"
                   id="contact_phone"
-                  name="contact_phone"
+                  name="company_contactPhone"
                   className="border rounded w-full py-2 px-3"
                   placeholder="Optional phone for applicants"
-                  value={formdata.contact_phone}
+                  value={updatedFormData.company.contactPhone}
                   onChange={handleChange}
                 />
               </div>
@@ -228,7 +234,7 @@ export default function Addjobs({ addJobsSubmit }) {
                   className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline"
                   type="submit"
                 >
-                  Add Job
+                  Update Job
                 </button>
               </div>
             </form>
@@ -239,6 +245,6 @@ export default function Addjobs({ addJobsSubmit }) {
   );
 }
 
-Addjobs.propTypes = {
-  addJobsSubmit: PropTypes.func,
+Updatejob.propTypes = {
+  updatedJobs: PropTypes.func,
 };

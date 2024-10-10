@@ -24,7 +24,6 @@ export default function Joblistings({ isHome }) {
       setloading(true);
     }
   }, [isHome]);
-  console.log(jobs);
   return (
     <>
       <section className="bg-blue-50 px-4 py-10">
@@ -46,5 +45,5 @@ export default function Joblistings({ isHome }) {
 }
 
 Joblistings.propTypes = {
-  isHome: PropTypes.bool,
+  isHome: PropTypes.string,
 };

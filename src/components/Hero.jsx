@@ -1,6 +1,9 @@
 import PropTypes from "prop-types";
 
-export default function Hero({ title, subtitle }) {
+export default function Hero({
+  title = "Become a React Developer",
+  subtitle = "You are using defaultProps to set up the subtitle value",
+}) {
   // this sets up the hero section(tip learn how to use section in your new codebase)
   // again we are passing out the props for both title and subtitle
   // you can still make some default values when the props passed appear empty
@@ -21,10 +24,10 @@ export default function Hero({ title, subtitle }) {
 }
 
 // helps you with typechecking also
-Hero.defaultProps = {
-  title: "Become a React Developer",
-  subtitle: "You are using defaultProps to set up the subtitle value",
-};
+//Hero.defaultProps = {
+//  title: "Become a React Developer",
+//  subtitle: "You are using defaultProps to set up the subtitle value",
+//};
 
 Hero.propTypes = {
   title: PropTypes.string,
