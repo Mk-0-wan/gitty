@@ -1,0 +1,55 @@
+ .
+├──  AUTHOR.md
+├──  CONTRIBUTING.md
+├──  eslint.config.js
+├──  index.html
+├──  package-lock.json
+├──  package.json
+├──  postcss.config.js
+├──  project_structure.txt
+├──  public
+│  ├── 󰕙 vite.svg
+│  └──  webfonts
+│     ├──  Geist-Black.woff2
+│     ├──  Geist-Bold.woff2
+│     ├──  Geist-ExtraBold.woff2
+│     ├──  Geist-ExtraLight.woff2
+│     ├──  Geist-Light.woff2
+│     ├──  Geist-Medium.woff2
+│     ├──  Geist-Regular.woff2
+│     ├──  Geist-SemiBold.woff2
+│     ├──  Geist-Thin.woff2
+│     └──  Geist[wght].woff2
+├──  README.md
+├──  src
+│  ├──  App.jsx
+│  ├──  assets
+│  │  ├──  images
+│  │  │  └──  logo.png
+│  │  └── 󰕙 react.svg
+│  ├──  components
+│  │  ├──  Addjobs.jsx
+│  │  ├──  Card.jsx
+│  │  ├──  first.jsx
+│  │  ├──  Hero.jsx
+│  │  ├──  HomeCards.jsx
+│  │  ├──  Joblisting.jsx
+│  │  ├──  Joblistings.jsx
+│  │  ├──  Navbar.jsx
+│  │  └──  ViewAllJobs.jsx
+│  ├──  index.css
+│  ├──  jobs.json
+│  ├──  layout
+│  │  └──  Mainlayout.jsx
+│  ├──  main.jsx
+│  ├──  pages
+│  │  ├──  Addjobspage.jsx
+│  │  ├──  Homepage.jsx
+│  │  ├──  Jobpage.jsx
+│  │  └──  Jobspage.jsx
+│  └──  utils
+│     ├──  formObject.jsx
+│     └──  jobloader.jsx
+├──  tailwind.config.js
+├──  track.md
+└──  vite.config.js

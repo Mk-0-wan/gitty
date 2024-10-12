@@ -47,4 +47,3 @@ Gitty is licensed under the MIT License. See the LICENSE file for details.
 ---
 
 Empower your GitHub workflow with Gitty - Your Ultimate GitHub Analytics Platform.
-
