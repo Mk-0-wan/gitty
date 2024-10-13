@@ -15,6 +15,14 @@ const userSchema = {
   },
 };
 
+const paramSchema = {
+  type: 'object',
+  properties: {
+    id: { type: 'string' },
+  },
+  required: ['id'],
+}
+
 async function routes(fastify, options) {
   fastify.get("/", async (_, reply) => {
     reply.send({ message: "Welcome to fastify routing" });
@@ -26,25 +34,24 @@ async function routes(fastify, options) {
       body: userSchema,
     }
   }
-
   const putSchema = {
     schema: {
-      params: {
-        type: 'object',
-        properties: {
-          id: { type: 'string' },
-        },
-        required: ['id'],
-      }
+      body: userSchema,
+      params: paramSchema,
     }
   }
+  const getDelSchema = {
+    schema: {
+      params: paramSchema,
+    }
+  }
+
   fastify.get('/users', UserController.getAllUsers);
   fastify.get('/files', UserController.getAllFiles);
   fastify.post('/users', postSchema, UserController.postUser);
-  fastify.get('/users/:id', putSchema, UserController.getUser);
-  //fastify.put('/users/:id', UserController.updateUser)
-  //fastify.delete('/users', UserController.deleteUser);
+  fastify.get('/users/:id', getDelSchema, UserController.getUser);
+  fastify.put('/users/:id', putSchema, UserController.updateUsers)
+  fastify.delete('/users/:id', getDelSchema, UserController.delUser);
 }
-
 
 export default routes;
