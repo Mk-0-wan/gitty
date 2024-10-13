@@ -1,5 +1,5 @@
 import Fastify from "fastify"
-import dotenv from  "dotenv";
+import dotenv from "dotenv";
 import routes from "./routes/firstRoute.js";
 import dbConnector from "./plugins/mongodb.js"
 
@@ -18,8 +18,8 @@ const createApp = () => {
   fastify.addHook(
     "preHandler",
     async (request, _) => {
-    request.db = fastify.mongo.db;
-  })
+      request.db = fastify.mongo.db;
+    })
   fastify.register(routes)
 
   fastify.listen({ port: process.env.PORT }, ((err) => {
@@ -31,3 +31,4 @@ const createApp = () => {
 }
 
 createApp();
+
