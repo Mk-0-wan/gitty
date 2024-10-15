@@ -18,9 +18,9 @@ For developers committed to maintaining consistent productivity, Gitty offers a 
 
 Gitty is built on a robust and modern tech stack, ensuring reliability, scalability, and performance:
 
-- **Backend**: Python with Flask framework, facilitating seamless API development and integration.
-- **Frontend**: HTML, CSS (Bootstrap for responsive design), and JavaScript (Axios for efficient API requests), ensuring a polished and intuitive user experience.
-- **Database**: MySQL with SQLAlchemy for efficient data management and retrieval.
+- **Backend**:  Nodejs with fastify framework powering the server, facilitating seamless API development and integration.
+- **Frontend**: HTML, Tailwindcss, and React ensuring a polished and intuitive user experience.
+- **Database**: Mongodb for efficient data management and retrieval.
 - **GitHub API Integration**: Gitty seamlessly integrates with the GitHub REST API, enabling real-time data retrieval and analysis.
 
 ## Future Development 👷‍♂️
@@ -35,6 +35,7 @@ Getting started with Gitty is quick and easy:
 2. Install the necessary dependencies outlined in the README.md file.
 3. Follow the setup instructions to configure Gitty for your environment.
 4. Explore the intuitive interface and gain valuable insights into your GitHub activity.
+5. For more direct and informative way to build gitty from your machine switch to the dev branch and follow the detailed readme instructionsa.
 
 ## Contributing 🏗️
 
