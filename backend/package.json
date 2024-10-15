@@ -1,0 +1,39 @@
+{
+  "name": "gitty-dev",
+  "version": "1.0.0",
+  "description": "Development branch for gitty",
+  "main": "server.js",
+  "type": "module",
+  "watch": [
+    "server.js",
+    "routes/",
+    "controllers/",
+    "plugins/"
+  ],
+  "ext": "js,json",
+  "ignore": [
+    "node_modules/",
+    "test/"
+  ],
+  "exec": "node --inspect server.js",
+  "scripts": {
+    "dev": "nodemon server.j",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "fl0wstate",
+  "license": "ISC",
+  "dependencies": {
+    "@fastify/mongodb": "^9.0.1",
+    "@fastify/passport": "^3.0.1",
+    "@fastify/secure-session": "^8.1.0",
+    "dotenv": "^10.0.0",
+    "fastify": "^5.0.0",
+    "fastify-plugin": "^5.0.1",
+    "passport-github2": "^0.1.12",
+    "pino-pretty": "^11.2.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}

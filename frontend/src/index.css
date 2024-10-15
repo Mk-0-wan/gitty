@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  /* Show scrollbar */
+  .scrollbar::-webkit-scrollbar {
+    display: block;
+  }
+
+  .scrollbar {
+    -ms-overflow-style: auto;
+    /* IE and Edge */
+    scrollbar-width: auto;
+    /* Firefox */
+  }
+}
+
+
+@font-face {
+  font-family: 'Geist';
+  src: url('/webfonts/Geist-Regular.woff1') format('woff2'),
+    url('/webfonts/Geist-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('/webfonts/Geist-Bold.woff1') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('/webfonts/Geist-ExtraBold.woff1') format('woff2');
+  font-weight: extra-bold;
+  font-family: normal;
+}
+
+/* Repeat for other font weights/styles as necessary */

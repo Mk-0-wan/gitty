@@ -1,0 +1,19 @@
+ .
+├──  controllers
+│  └──  UserController.js
+├──  middleware
+│  └──  auth.js
+├──  package-lock.json
+├──  package.json
+├──  plugins
+│  ├──  mongodb.js
+│  ├──  passport.js
+│  └──  session.js
+├──  project_structure.txt
+├──  routes
+│  └──  firstRoute.js
+├──  secret_key
+├──  server.js
+└──  utils
+   └──  models
+      └──  getUserCollection.js
