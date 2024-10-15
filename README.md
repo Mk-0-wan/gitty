@@ -50,7 +50,7 @@ The goal here is to:
     Start both the frontend and backend servers locally to test the development build.
 
 ## Roadmap
-- [ ] Implement GitHub OAuth with `fastify-passport`.
+- [x] Implement GitHub OAuth with `fastify-passport`.
 - [ ] Integrate MongoDB for persistent data storage.
 - [ ] Add a dashboard to visualize repository insights.
 - [ ] Implement automated tests for backend routes.
