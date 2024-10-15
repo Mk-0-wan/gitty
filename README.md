@@ -51,7 +51,7 @@ The goal here is to:
 
 ## Roadmap
 - [x] Implement GitHub OAuth with `fastify-passport`.
-- [ ] Integrate MongoDB for persistent data storage.
+- [x] Integrate MongoDB for persistent data storage.
 - [ ] Add a dashboard to visualize repository insights.
 - [ ] Implement automated tests for backend routes.
 
