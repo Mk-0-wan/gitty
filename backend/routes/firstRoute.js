@@ -1,4 +1,6 @@
 import UserController from "../controllers/UserController.js";
+import fastifyPassport from "@fastify/passport";
+import ensureAuthenticated from "../middleware/auth.js";
 
 /*
  * Holds all the routes that the app is going to use
@@ -24,11 +26,6 @@ const paramSchema = {
 }
 
 async function routes(fastify, options) {
-  fastify.get("/", async (_, reply) => {
-    reply.send({ message: "Welcome to fastify routing" });
-  })
-
-
   const postSchema = {
     schema: {
       body: userSchema,
@@ -46,6 +43,26 @@ async function routes(fastify, options) {
     }
   }
 
+  fastify.get("/",
+    { preValidation: ensureAuthenticated },
+    async (_, reply) => {
+      reply.send("Hurray!! you logged in successfuly")
+    });
+  fastify.get('/login', { preValidation: fastifyPassport.authenticate("github") },
+    async (_, reply) => {
+      console.log('You are currently loggin in...');
+      reply.send({ message: 'Logged in successfully!' });
+    });
+  fastify.get('/auth/github/callback', { preValidation: fastifyPassport.authenticate("github") },
+    async (request, reply) => {
+      console.log(request);
+      console.log('You have reached me...');
+      reply.redirect("/");
+    });
+  fastify.get('/logout', async (request, reply) => {
+    request.logout();
+    reply.redirect("/users");
+  });
   fastify.get('/users', UserController.getAllUsers);
   fastify.get('/files', UserController.getAllFiles);
   fastify.post('/users', postSchema, UserController.postUser);
