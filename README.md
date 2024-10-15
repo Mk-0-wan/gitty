@@ -1,60 +1,49 @@
-# Development Branch
+# Gitty
+
+## Overview 🔬
+
+Welcome to Gitty - Your Comprehensive GitHub Analytics Platform. Gitty is a sophisticated web application designed to provide developers with deep insights into their GitHub repositories, commits, and issue statuses in real-time. Unlike conventional platforms, Gitty offers a streamlined and intuitive interface, allowing developers to effortlessly navigate and understand their GitHub activity.
+
+## Features 🧰
+
+### Real-time Data Visualization 📊
+
+Gitty leverages cutting-edge visualization techniques powered by Chart.js to present your GitHub data in an easily digestible format. Through dynamic graphs and charts, developers gain valuable insights into their repositories, commit trends, and issue statuses, enabling informed decision-making and efficient workflow management.
+
+### Commit Streak Tracking ☑️
+
+For developers committed to maintaining consistent productivity, Gitty offers a dedicated commit streak tracking feature. This feature provides a comprehensive overview of daily commit activity, empowering developers to monitor their progress and stay on track with their goals.
+
+## Tech Stack 👨‍💻
+
+Gitty is built on a robust and modern tech stack, ensuring reliability, scalability, and performance:
+
+- **Backend**: Python with Flask framework, facilitating seamless API development and integration.
+- **Frontend**: HTML, CSS (Bootstrap for responsive design), and JavaScript (Axios for efficient API requests), ensuring a polished and intuitive user experience.
+- **Database**: MySQL with SQLAlchemy for efficient data management and retrieval.
+- **GitHub API Integration**: Gitty seamlessly integrates with the GitHub REST API, enabling real-time data retrieval and analysis.
+
+## Future Development 👷‍♂️
+
+While Gitty is already delivering powerful analytics capabilities, our commitment to innovation drives us to continuously enhance its features and functionality. Future updates may include advanced analytics modules, such as pull request analysis, code review insights, and integration with popular developer tools, further enriching the GitHub experience for developers worldwide.
+
+## Getting Started 🔄
+
+Getting started with Gitty is quick and easy:
+
+1. Clone the repository to your local machine.
+2. Install the necessary dependencies outlined in the README.md file.
+3. Follow the setup instructions to configure Gitty for your environment.
+4. Explore the intuitive interface and gain valuable insights into your GitHub activity.
+
+## Contributing 🏗️
+
+We welcome contributions from the developer community to help improve and evolve Gitty. Whether it's bug fixes, feature enhancements, or feedback, your input is invaluable in shaping the future of Gitty. Please refer to the CONTRIBUTING.md file for guidelines on how to contribute.
+
+## License 👮
+
+Gitty is licensed under the MIT License. See the LICENSE file for details.
+
 ---
-Welcome to the development branch of the Gitty app. This branch will house the latest feature developments, ideas, and improvements to the Gitty app. Please note that this branch may contain incomplete or experimental features.
 
-The goal here is to:
-- Document new ideas and technology choices.
-- Test new features before merging into the main branch.
-- Iterate on app improvements for both the frontend and backend.
-
-## Frontend
-
-- **React**: A popular JavaScript library for building user interfaces, chosen for its flexibility and strong ecosystem.
-- **Vite**: A build tool that provides faster development by using modern browsers' native ES modules.
-- **JavaScript**: The primary language for the frontend to maintain simplicity and flexibility.
-
-## Backend
-
-- **Fastify**: A fast and low-overhead web framework for Node.js, chosen for its speed and built-in schema validation.
-- **fastify-passport**: Used for authentication to integrate GitHub OAuth easily.
-- **fastify-mongodb**: MongoDB integration for managing app data and storing repository information.
-- **fastify-secure-session**: A session management plugin to handle secure user sessions efficiently.
-
-## Setup Instructions
-
-1. **Clone the Repository**:
-    ```bash
-    git clone https://github.com/yourusername/gitty.git
-    cd gitty
-    git checkout development
-    ```
-
-2. **Install Dependencies**:
-    - Frontend:
-      ```bash
-      cd frontend
-      npm install
-      npm run dev
-      ```
-    - Backend:
-      ```bash
-      cd backend
-      npm install
-      npm run start
-      ```
-
-3. **Environment Variables**:
-    Ensure you have the required environment variables set up for both the frontend and backend, especially for GitHub OAuth integration and MongoDB.
-
-4. **Run the App**:
-    Start both the frontend and backend servers locally to test the development build.
-
-## Roadmap
-- [x] Implement GitHub OAuth with `fastify-passport`.
-- [x] Integrate MongoDB for persistent data storage.
-- [ ] Add a dashboard to visualize repository insights.
-- [ ] Implement automated tests for backend routes.
-
-## Branch Strategy
-- The `development` branch is where new features and improvements are tested.
-- Once features are stable, they are merged into the `gitty` branch for release.
+Empower your GitHub workflow with Gitty - Your Ultimate GitHub Analytics Platform.
