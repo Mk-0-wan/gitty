@@ -1,4 +1,4 @@
-import { FaArrowLeft, FaArrowRight, FaGithub } from "react-icons/fa"
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa"
 import { Divider } from "@tremor/react";
 import { FiMoreVertical } from "react-icons/fi";
 import PropTypes from "prop-types";
@@ -91,6 +91,10 @@ export const SideBarIcon = ({ icon, text = 'tooltip', links, alert }) => {
 SideBarIcon.propTypes = {
   text: PropTypes.string,
   links: PropTypes.string,
-  alert: PropTypes.string,
+  alert: PropTypes.bool,
   icon: PropTypes.object,
+}
+
+GittySideBar.propTypes = {
+  children: PropTypes.array.isRequired,
 }
