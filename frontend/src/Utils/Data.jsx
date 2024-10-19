@@ -63,3 +63,5 @@ export const metadata = {
     isLandscape: false,
   },
 }
+
+export const isAuthenticated = () => !!localStorage.getItem("token");
