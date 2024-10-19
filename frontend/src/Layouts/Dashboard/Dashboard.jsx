@@ -5,6 +5,8 @@ import { LuArrowDownRight, LuArrowUpRight } from "react-icons/lu";
 import { SparkAreaChart } from "@tremor/react";
 import { AreaChartHero } from "./CreateLayout";
 import MyTable from "./RepoLayout";
+import HotRepos from "../../Components/HotRepos";
+import HotUsers from "../../Components/HotUsers";
 
 export default function DashboardNav() {
   const data = {
@@ -50,18 +52,20 @@ const DashGrid = () => {
         <div
           key={idx}
           className={cx(
-            "border border-blue-500/10 rounded-xl p-4 transition-all duration-300",
-            "hover:shadow-lg hover:scale-105 bg-blue-900/10",
+            "border border-blue-500/10 rounded-xl transition-all duration-300",
+            "hover:shadow-lg  bg-blue-900/10",
+            (idx < 3 ? "hover:scale-105" : ""),
             (idx === 3 ? "row-span-2" : ""),
-            (idx === 4 ? "col-span-3 hover:scale-100" : ""),
-            (idx === 5 ? "col-span-3 hover:scale-100" : ""),
+            (idx !== 3 ? "p-4" : "p-0"),
+            (idx === 4 ? "col-span-3" : ""),
+            (idx === 5 ? "col-span-3" : ""),
           )}>
           {idx < 2 && (<CardData item={item} />)}
           {idx === 2 && (<DonutChartLabelExample />)}
-          {idx === 3 && (<div>Hot things</div>)}
+          {idx === 3 && (<HotRepos />)}
           {idx === 4 && (<AreaChartHero />)}
-          {idx === 5 && (<MyTable datas={data} />)}
-          {idx === 6 && (<div>Hot things</div>)}
+          {idx === 5 && (<MyTable />)}
+          {idx === 6 && (<HotUsers />)}
         </div>
       ))}
     </div>

@@ -171,7 +171,7 @@ const testing = () => {
   );
 }
 
-export default function MyTable({ datas }) {
+export default function MyTable() {
   const data = [
     {
       workspace: "sales_by_day_api",
