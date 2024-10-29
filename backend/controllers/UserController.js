@@ -1,6 +1,7 @@
 import { createHash } from "crypto";
 import { ObjectId } from "@fastify/mongodb";
-import { deleteUser, findUser, getCollection, postNewUser, updateUser } from "../utils/models/getUserCollection.js";
+import { deleteUser, findUser, postNewUser, updateUser } from "../utils/models/getUserCollection.js";
+import getCollection from "../utils/helpers.js";
 import dotenv from "dotenv";
 
 dotenv.config();
