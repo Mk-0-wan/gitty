@@ -90,5 +90,5 @@ export default function Demos({ header, metadata }) {
 
 Demos.propTypes = {
   header: PropTypes.string,
-  metadata: PropTypes.Object,
+  metadata: PropTypes.object,
 }

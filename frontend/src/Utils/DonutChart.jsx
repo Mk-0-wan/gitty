@@ -39,7 +39,7 @@ export const DonutChartLabelExample = () => (
     value="amount"
     showLabel={true}
     valueFormatter={(number) =>
-      `$${Intl.NumberFormat("us").format(number).toString()}`
+      `C: ${Intl.NumberFormat("us").format(number).toString()}`
     }
   />
 )

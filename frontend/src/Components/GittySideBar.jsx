@@ -2,12 +2,14 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa"
 import { Divider } from "@tremor/react";
 import { FiMoreVertical } from "react-icons/fi";
 import PropTypes from "prop-types";
-import { NavLink } from "react-router-dom";
+import { NavLink, useOutletContext } from "react-router-dom";
 import cx from "classnames";
 import { createContext, useContext, useState } from "react";
 
 const SideBarContext = createContext();
 export default function GittySideBar({ children }) {
+  const { user } = useOutletContext();
+  console.log(user);
   const [expanded, setExpanded] = useState(false);
   return (
     <aside className="h-screen font-geist text-sm">
@@ -33,7 +35,7 @@ export default function GittySideBar({ children }) {
         <Divider />
         <div className="-mt-4 flex p-2">
           <img
-            src="https://ui-avatars.com/api/?background=random"
+            src={`https://ui-avatars.com/api/?name=${user.user.username}`}
             className={cx(
               "w-10 h-10 rounded-md ml-1",
             )}
@@ -44,8 +46,8 @@ export default function GittySideBar({ children }) {
           )}>
             <div className="leading-4">
               {/* Put all the user info here */}
-              <h4 className="font-semibold">John Doe</h4>
-              <span className="text-xs text-gray-600">johnDoe@gmail.com</span>
+              <h4 className="font-semibold">{user.user.username}</h4>
+              <span className="text-xs text-gray-600">{user.user.email}</span>
             </div>
             <FiMoreVertical size="20" />
           </div>
