@@ -10,6 +10,10 @@
   .sidebar-tooltip {
     @apply absolute left-full rounded-md px-2 py-1 ml-6 border border-blue-800/50 bg-blue-600/100 text-gray-50 text-sm invisible opacity-20 -translate-x-3 transition-all group-hover:visible group-hover:opacity-100 group-hover:translate-x-0;
   }
+
+  .dashboard {
+    @apply border  p-2 border-blue-500/10 rounded-xl transition-all duration-300 hover:shadow-lg bg-blue-900/10
+  }
 }
 
 @layer utilities {
