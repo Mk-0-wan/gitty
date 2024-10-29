@@ -14,7 +14,7 @@ export default function FooterLayout() {
           </div>
           <div className="flex items-center gap-6 whitespace-nowrap">
             <a className="hidden lg:block -mx-1 px-1" href="tel:+1 (201) 500-2007">+1 (201) 500-2007</a>
-            <a className="hidden lg:block -mx-1 px-1" href="mailto:hello@betterstack.com">hello@betterstack.com</a>
+            <a className="hidden lg:block -mx-1 px-1" href="mailto:hello@betterstack.com">hello@gitty.com</a>
             <div className="hidden lg:block h-4 border-l border-neutral-300/10"></div>
             <div className="hidden lg:flex">
               <div className="flex gap-4 text-neutral-300">
@@ -81,7 +81,7 @@ export default function FooterLayout() {
             </div>
           </div>
           <div className="flex items-center text-neutral-300">
-            © 2024 Better Stack, Inc. All rights reserved. <span>__</span><FaDragon />
+            © 2024 <span className="text-xl">.ඞ</span>, Inc. All rights reserved. <span>__</span><FaDragon />
           </div>
         </div>
       </div>

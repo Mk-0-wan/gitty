@@ -1,7 +1,8 @@
 import { NavLink } from "react-router-dom";
-import { FaArrowLeft, FaGithub } from "react-icons/fa";
+import { FaArrowLeft } from "react-icons/fa";
+import LoginButton from "../Components/GitHubLoginButton";
 
-export default function LogginLayout() {
+export default function LogginLayout({ login }) {
   return (
     <div className="min-h-screen text-base flex flex-col items-center justify-center bg-[#0B0C14]">
       <div className='absolute inset-0 overflow-hidden font-inconsolata'>
@@ -24,21 +25,7 @@ export default function LogginLayout() {
             <h1 className="font-bold text-[32px] text-[#C9D3EE] leading-[120%] mt-2.5 mb-2.5">
               Sign up with Github
             </h1>
-            <NavLink
-              /* you will apply your loggin api/ endpoints here*/
-              to="/dashboard"
-              className="hover:border-blue-500 transition duration-2 w-72 m-3 pt-2.5 pb-2.5 border border-blue-950 text-current flex gap-4 justify-center rounded-full">
-              <FaGithub className="text-blue-400 rounded-full text-4xl" />
-            </NavLink>
-            <p className="mt-3 text-center text-white">
-              <span>Already have an account? </span>
-              <span className="sm:text-lg">
-                <NavLink to="/" className="text-sky-800 transition hover:text-neutral-200 focus-visible -m-1 p-1" >
-                  Sign in
-                </NavLink>
-                .
-              </span>
-            </p>
+            <LoginButton login={login} />
           </div>
           <div className='mt-9'></div>
         </main>
