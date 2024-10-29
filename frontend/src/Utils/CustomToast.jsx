@@ -20,7 +20,8 @@ export const ToastProvider = ({ children }) => {
     <ToastContext.Provider value={{ addToast, removeToast }}>
       <ToastPrimitives.Provider>
         {children}
-        <ToastPrimitives.Viewport className="fixed right-0 top-0 z-[9999] m-0 flex w-full max-w-[100vw] list-none flex-col gap-2 p-[var(--viewport-padding)] [--viewport-padding:_15px] sm:max-w-md sm:gap-4" />
+        <ToastPrimitives.Viewport className="fixed right-0 bottom-0 z-[9999] m-0 flex w-full max-w-[100vw] list-none flex-col gap-2 p-[var(--viewport-padding)] [--viewport-padding:_15px] sm:max-w-md sm:gap-4" />
+
         {toasts.map((toast) => (
           <MyToast
             key={toast.id}
@@ -37,5 +38,7 @@ ToastProvider.propTypes = {
   children: PropTypes.object.isRequired,
 }
 
-export const useToast = () => useContext(ToastContext);
+const useToast = () => useContext(ToastContext);
+
+export default useToast;
 
