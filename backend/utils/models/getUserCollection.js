@@ -1,9 +1,7 @@
-const getCollection = (db, collectionName) => {
-  return db.collection(collectionName);
-}
-
 const postNewUser = async (data, db, collectionName) => {
   try {
+    //const exists = await findUser({ email: data.email }, db, collectionName);
+    //if (exists) return { success: false, message: "Already exists" };
     const result = await db.collection(collectionName).insertOne(data)
     return result
   } catch (err) {
@@ -30,6 +28,14 @@ const deleteUser = async (query, db, collectionName) => {
   }
 }
 
+const findOneUser = async (query, db, collectionName) => {
+  try {
+    const user = await db.collection(collectionName).findOne(query);
+    return user;
+  } catch (err) {
+    throw new Error('Failed to retrive the user', err);
+  }
+}
 const findUser = async (query = {}, db, collectionName) => {
   try {
     const user = await db.collection(collectionName).find(query).toArray();
@@ -47,4 +53,4 @@ const countUsers = async (db, collectionName) => {
     throw new Error(`Failed to query users detail ${err.message}`);
   }
 }
-export { getCollection, postNewUser, updateUser, deleteUser, findUser, countUsers };
+export { postNewUser, updateUser, deleteUser, findUser, findOneUser, countUsers };

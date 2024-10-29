@@ -4,6 +4,9 @@ import routes from "./routes/firstRoute.js";
 import dbConnector from "./plugins/mongodb.js";
 import secureSession from "./plugins/session.js";
 import passPort from "./plugins/passport.js";
+import cors from "./plugins/cors.js";
+import redis from "./plugins/redis.js";
+import registerHooks from "./hooks/hooks.js";
 
 dotenv.config();
 
@@ -15,13 +18,11 @@ const createApp = () => {
       },
     },
   });
-  // register all the routes
+
+  registerHooks(fastify);
+  fastify.register(cors);
+  fastify.register(redis);
   fastify.register(dbConnector);
-  fastify.addHook(
-    "preHandler",
-    async (request, _) => {
-      request.db = fastify.mongo.db;
-    })
   fastify.register(secureSession);
   fastify.register(passPort);
   fastify.register(routes);
@@ -35,4 +36,3 @@ const createApp = () => {
 }
 
 createApp();
-

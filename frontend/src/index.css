@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .sidebar-icon {
+    @apply relative flex bg-gray-600/50 items-center py-2 px-3 my-1 shadow-lg text-green-500 hover:bg-green-600 rounded-3xl hover:rounded-xl transition-all duration-200 cursor-pointer;
+  }
+
+  .sidebar-tooltip {
+    @apply absolute left-full rounded-md px-2 py-1 ml-6 border border-blue-800/50 bg-blue-600/100 text-gray-50 text-sm invisible opacity-20 -translate-x-3 transition-all group-hover:visible group-hover:opacity-100 group-hover:translate-x-0;
+  }
+}
+
 @layer utilities {
 
   /* Hide scrollbar for Chrome, Safari and Opera */
@@ -28,29 +38,108 @@
     scrollbar-width: auto;
     /* Firefox */
   }
+
 }
 
 
 @font-face {
   font-family: 'Geist';
-  src: url('/webfonts/Geist-Regular.woff1') format('woff2'),
-    url('/webfonts/Geist-Regular.woff') format('woff');
-  font-weight: normal;
+  src: url('../src/assets/webfonts/Geist-Regular.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('../src/assets/webfonts/Geist-Thin.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('../src/assets/webfonts/Geist-SemiBold.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'Geist Sans';
+  src: url('../src/assets/webfonts/Geist-Light.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('../src/assets/webfonts/Geist-Bold.woff2') format('woff2');
+  font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Geist';
-  src: url('/webfonts/Geist-Bold.woff1') format('woff2');
-  font-weight: bold;
+  src: url('../src/assets/webfonts/Geist-ExtraBold.woff2') format('woff2');
+  font-weight: 800;
   font-style: normal;
 }
 
+
 @font-face {
-  font-family: 'Geist';
-  src: url('/webfonts/Geist-ExtraBold.woff1') format('woff2');
-  font-weight: extra-bold;
-  font-family: normal;
+  font-family: 'Geist Mono';
+  src: url('../src/assets/webfonts/GeistMono-Regular.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Geist Mono';
+  src: url('../src/assets/webfonts/GeistMono-Thin.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: 'Geist Mono';
+  src: url('../src/assets/webfonts/GeistMono-Light.woff2') format('woff2'),
+    url('../src/assets/webfonts/GeistMono-UltraLight.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Geist Mono';
+  src: url('../src/assets/webfonts/GeistMono-Medium.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Geist Mono';
+  src: url('../src/assets/webfonts/GeistMono-SemiBold.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'Geist Mono';
+  src: url('../src/assets/webfonts/GeistMono-Bold.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Geist Mono';
+  src: url('../src/assets/webfonts/GeistMono-Black.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: 'Geist Mono';
+  src: url('../src/assets/webfonts/GeistMono-UltraBlack.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 900;
 }
 
 /* Repeat for other font weights/styles as necessary */

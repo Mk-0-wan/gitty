@@ -2,7 +2,7 @@ import dotenv from "dotenv";
 import fastifyPassport from "@fastify/passport";
 import { Strategy as GitHubStratergy } from "passport-github2";
 import fastifyPlugin from "fastify-plugin";
-import { findUser, postNewUser } from "../utils/models/getUserCollection.js";
+import { findOneUser, postNewUser } from "../utils/models/getUserCollection.js";
 import { ObjectId } from "@fastify/mongodb";
 
 dotenv.config();
@@ -18,25 +18,51 @@ async function passPort(fastify, options) {
   fastify.register(fastifyPassport.initialize());
   fastify.register(fastifyPassport.secureSession());
   fastifyPassport.use('github', new GitHubStratergy(options, async function(accessToken, refreshToken, profile, done) {
-    let foundUser;
     try {
-      const userData = {
-        email: profile.emails[0].value,
-        avatar: profile._json.avatar_url,
-        username: profile._json.login,
-        bio: profile._json.bio,
+      let foundUser = await findOneUser({ email: profile.emails[0].value }, fastify.mongo.db, 'users');
+
+      if (process.env.NODE_ENV) console.log('OAuth callback - found user:', foundUser);
+
+      if (!foundUser || foundUser.length === 0) {
+        const userData = {
+          email: profile.emails[0].value,
+          avatar: profile._json.avatar_url,
+          username: profile._json.login,
+          bio: profile._json.bio,
+        }
+        const forReq = { ...profile, accessToken };
+        await postNewUser(forReq, fastify.mongo.db, 'profile');
+        const newUser = await postNewUser(userData, fastify.mongo.db, 'users');
+        return done(null, newUser.insertedId);
       }
-      foundUser = await postNewUser(userData, fastify.mongo.db, 'users');
-    } catch(err) {
-      console.error(err);
-      done(err, null)
+      if (process.env.NODE_ENV) console.log('Using existing user:', foundUser._id);
+      return done(null, foundUser._id);
+    } catch (err) {
+      console.error('GitHub auth error:', err);
+      return done(err, null);
     }
-    done(undefined, foundUser.insertedId);
   }));
 
-  fastifyPassport.registerUserSerializer(async (user_id, request) => request.session.id = user_id);
-  fastifyPassport.registerUserDeserializer(async (id, _) => {
-    return await findUser({ _id: ObjectId.createFromHexString(id)}, fastify.mongo.db, 'users');
+  fastifyPassport.registerUserSerializer(async (user_id, request) => {
+    if (process.env.NODE_ENV) console.log("We are inside the selializer");
+    if (process.env.NODE_ENV) console.log(request.session);
+    return user_id.toString();
+  });
+
+  fastifyPassport.registerUserDeserializer(async (id, request) => {
+    try {
+      const newId = ObjectId.createFromHexString(id);
+      const user = await findOneUser({ _id: newId }, fastify.mongo.db, 'users');
+
+      if (!user || user.length === 0) {
+        console.log('No user found for ID:', newId);
+        return null;
+      }
+      return user;
+    } catch (err) {
+      console.error('Deserialize error:', err);
+      return null;
+    }
   });
 }
 

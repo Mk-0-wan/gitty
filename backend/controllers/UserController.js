@@ -1,6 +1,7 @@
 import { createHash } from "crypto";
 import { ObjectId } from "@fastify/mongodb";
-import { deleteUser, findUser, getCollection, postNewUser, updateUser } from "../utils/models/getUserCollection.js";
+import { deleteUser, findUser, postNewUser, updateUser } from "../utils/models/getUserCollection.js";
+import getCollection from "../utils/helpers.js";
 import dotenv from "dotenv";
 
 dotenv.config();
@@ -11,7 +12,7 @@ async function getAllFiles(request, reply) {
 }
 
 async function getAllUsers(request, reply) {
-  const users = await getCollection(request.db, collection).find().toArray();
+  const users = await getCollection(request.db, collection).find({}).toArray();
   return reply.send(users);
 }
 
@@ -28,7 +29,7 @@ async function postUser(request, reply) {
 
 async function getUser(request, reply) {
   const { id } = request.params;
-  const result = await findUser(ObjectId.createFromHexString(id), request.db, collection);
+  const result = await findUser({ _id: ObjectId.createFromHexString(id) }, request.db, collection);
   reply.send(result);
 }
 
